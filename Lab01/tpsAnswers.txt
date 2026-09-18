@@ -1,0 +1,28 @@
+TPS 1:
+Tiffany (Me)
+Megan
+Dmitri
+
+Linux: https://www.osc.edu/content/linux-command-line-fundamentals
+Mac: https://www.geeksforgeeks.org/linux-unix/complete-mac-terminal-commands-cheat-sheet/
+Windows: https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows
+
+TPS 2:
+1. You can open it via the shortcut control -> ` OR going to the top menu and pressing terminal -> new terminal
+1a. Yes you can open more than 1 terminal at a time
+1b. Sometimes you want to open more than one terminal for maybe logging things and monitoring to help debug
+2. Using the "ls" command
+3. Cd ~/Desktop
+4. You would use the command "mkdir foldername"
+
+TPS 3:
+GCC Guide: https://www.acrc.bris.ac.uk/acrc/RedHat/rhel-gcc-en-4/invoking-gcc.html
+Another guide: https://www.geeksforgeeks.org/linux-unix/gcc-command-in-linux-with-examples/
+Anotherr Guide: https://docs.openeuler.org/en/docs/20.03_LTS/docs/ApplicationDev/using-gcc-for-compilation.html
+3. gcc main.c -o main
+4. Checking the terminal to see the expected results, if it failed then it'll throw out errors and won't compile to the expected results.
+5. Compiles and assembles specified source files to generate target files without linking them. It is usually used to compile subprogram files. (Taken from link 3)
+6. Contains standard debugging information in executable programs. (Taken from link 3)
+7. Using g++ main.cpp -o cselab1
+8. It compiles
+9. gcc main.c

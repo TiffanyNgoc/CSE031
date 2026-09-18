@@ -1,0 +1,60 @@
+START PROGRAM 
+// 1. The birthing of variables
+SET counter = 1
+SET even_sum = 0
+SET even_count = 0
+SET odd_sum = 0
+SET odd_count = 0
+
+    // 2. Birthing of loop to keep asking for numbers
+    FOREVER LOOP:
+        PRINT "Enter value number " + counter (st, rd, th)
+        INPUT user_number
+
+        // If the user types 0, stop right away
+        IF user_number IS 0 THEN
+            EXIT LOOP
+        ENDIF
+
+        // 3. Find the sum of the digits
+        SET temp_number = absolute value of user_number
+        SET total_digits = 0
+        
+        LOOP WHILE temp_number > 0:
+            SET last_digit = temp_number MOD 10
+            total_digits = total_digits + last_digit
+            temp_number = temp_number / 10
+        END LOOP
+
+        // 4. Sort the number into the right bucket
+        IF total_digits is EVEN THEN
+            even_sum = even_sum + user_number
+            even_count = even_count + 1
+        ELSE
+            odd_sum = odd_sum + user_number
+            odd_count = odd_count + 1
+        ENDIF
+
+        // Move to the next value number
+        counter = counter + 1
+
+    END LOOP
+
+    // 5. Calculate and print the results
+    IF even_count IS 0 AND odd_count IS 0 THEN
+        PRINT "There is no average to compute."
+    ELSE
+        IF even_count > 0 THEN
+            SET even_average = even_sum / even_count
+            PRINT "Average of even digit sum numbers: " + even_average
+        ENDIF
+
+        IF odd_count > 0 THEN
+            SET odd_average = odd_sum / odd_count
+            PRINT "Average of odd digit sum numbers: " + odd_average
+        ENDIF
+    ENDIF
+
+END
+
+END PROGRAM

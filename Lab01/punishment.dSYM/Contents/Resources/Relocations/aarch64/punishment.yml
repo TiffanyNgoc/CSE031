@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/tiffany/Documents/Visual Studio Code/CSE031Labs/Lab01/punishment'
+relocations:     []
+...
