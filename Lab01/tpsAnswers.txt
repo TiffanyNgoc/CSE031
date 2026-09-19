@@ -2,6 +2,7 @@ TPS 1:
 Tiffany (Me)
 Megan
 Dmitri
+Logan Cardiff
 
 Linux: https://www.osc.edu/content/linux-command-line-fundamentals
 Mac: https://www.geeksforgeeks.org/linux-unix/complete-mac-terminal-commands-cheat-sheet/
