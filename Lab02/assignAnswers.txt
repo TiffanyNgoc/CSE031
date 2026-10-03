@@ -1,0 +1,52 @@
+Assignment 1:
+
+1. The segmentation fault was caused by line 25:
+   scanf("%d", input);
+
+2. The bug is that sum is passed into read_values by value, so
+   read_values only changes a copy of sum. The original sum variable
+   in main is still 0 after read_values finishes.
+
+3. I fixed it by changing the parameter to a double pointer:
+
+   int read_values(double *sum)
+
+   Then I pass the address of sum from main:
+
+   values = read_values(&sum);
+
+   Inside read_values, I use *sum to access and change the original
+   sum variable.
+
+   Assignment 2:
+
+1. For str1 = "HELLO!" and str2 = "hello!", the output was:
+
+   HELLO!hello!
+
+   The output is expected because str2 was correctly appended to the end
+   of str1.
+
+2. For str1 = "HI!" and str2 = "hi!", my output was:
+
+   HI!hi!hello!
+
+   This is not expected. The expected output is HI!hi!.
+
+   The bug is that the append function does not put a null terminator '\0'
+   at the end of the new string. Because of this, printf does not know where
+   the new string ends and can keep reading characters that were left in
+   memory from the previous string.
+
+   I fixed it by adding:
+
+   s1[s1len + s2len] = '\0';
+
+   after the for loop.
+
+3. When I entered "Hello! How are you?" and "I am fine, thank you!", the
+   output was not expected. The arrays str1 and str2 are only 10 characters
+   long, but the strings I entered are longer than the space available.
+   This causes the program to write outside the array and can overwrite
+   other memory, which causes unexpected output. We do not need to fix this
+   part according to the instructions.

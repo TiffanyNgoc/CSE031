@@ -5,5 +5,77 @@ Dmitri
 
 TPS 2:
 
+1. I press the compile/run button that looks like a play sign on the top right
+   of VS Code. This compiles punishment.c and creates the executable called
+   punish. To debug the program, it needs to be compiled with debugging
+   information.
+
+2. I open punishment.c in VS Code and use the Run and Debug option from the
+   play button/dropdown. This loads my program into the debugger.
+
+3. Once the program is loaded into the debugger, I press the Run/Continue
+   button in VS Code to start running the program.
+
+4. A breakpoint is an intentional stopping place in my code where the program
+   pauses during execution. On Mac in VS Code, I can set a breakpoint by
+   clicking just to the left of the line number in my C file. A red dot appears
+   showing where the breakpoint is. I put the breakpoint on the line where the
+   for loop begins.
+
+5. Once the program stops at my breakpoint, I can use the Step Over button in
+   the debugging controls to run the program one line at a time. I can press it
+   3 times to go through the next 3 lines.
+
+6. While the program is paused, I can see the values of my variables in the
+   Variables section of the debugger. I can also hover my mouse over a variable
+   in the code to see its current value. I checked 3 variables this way.
+
+7. When I am done going line by line, I can press the Continue button in the
+   debugger. This lets the program continue running instead of stepping through
+   each line individually.
+
+8. To exit the debugger, I can press the Stop button in the VS Code debugging
+   controls. If I am using LLDB directly in the terminal, I can type "quit".
 
 TPS 3:
+
+1. There are 5 variables declared: x, y, px, py, and arr. Two of them are
+   pointers, which are px and py. The * in front of px and py means they are
+   pointer variables.
+
+2. x, y, and arr[0] can contain unexpected or random-looking values when the
+   program first runs because they were declared but were not initialized.
+   C does not automatically give local variables a value of 0. The values I
+   see may also be different each time I run the program because they are
+   whatever data was already in those memory locations.
+
+3. I can prevent the unexpected values by initializing the variables when I
+   declare them. For example, I can set x = 0 and y = 0 and initialize the
+   array values to 0.
+
+4. I can use printf with %p and the & operator to display the memory addresses
+   of x and y. The & means "address of."
+
+5. I can make px point to x by using:
+       px = &x;
+   and make py point to y by using:
+       py = &y;
+
+   px then stores the address of x and py stores the address of y. I can use
+   *px and *py to access the values stored at those addresses. I can also use
+   &px and &py to see the addresses of the pointer variables themselves.
+
+6. An array name can act like a pointer to its first element. I can use pointer
+   arithmetic instead of [] to access the array. For example:
+       *(arr + i)
+   accesses the value at position i in the array.
+
+7. arr points to the first element of the array, so arr and &arr[0] should
+   represent the same starting memory address. I can print both addresses to
+   verify that they are the same.
+
+8. &arr is the address of the entire array. It normally displays the same
+   starting memory address as arr and &arr[0] because the array itself starts
+   at its first element. However, they have different types: arr refers to
+   the first element in most expressions, while &arr is a pointer to the
+   entire array.
