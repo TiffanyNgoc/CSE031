@@ -21,7 +21,7 @@ char* append(char s1[], char s2[]) {
     }
 
     // add the null terminator at the end of the new string to know where new string ends
-    // s1[s1len + s2len] = '\0';
+    s1[s1len + s2len] = '\0';
     
     return s1;
 }
