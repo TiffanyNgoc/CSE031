@@ -1,0 +1,37 @@
+TPS 1:
+1:
+Static memory: Stores global and static variables. These variables stay in memory for the entire program.
+Stack: Stores local variables declared inside functions, including regular variables and pointer variables.
+Heap: Stores memory that is dynamically allocated using malloc(). This memory stays allocated until it is freed.
+
+2a:
+There are 3 variables declared: num, ptr, and handle.
+
+2b:
+There are 2 pointers.
+ptr is an int *, so it points to an integer.
+handle is an int **, so it points to an integer pointer.
+
+2c:
+All 3 variables (num, ptr, and handle) are local variables inside main(), so they are stored on the stack.
+The memory allocated by malloc() is stored on the heap.
+
+2d:
+ptr points to the heap because malloc() dynamically allocates memory there.
+
+3:
+The stack contains num, ptr, and handle. The heap contains the dynamically allocated memory that ptr and handle point to. Static memory does not contain any global or static variables declared in this program.
+
+4:
+handle points to a heap location containing a copy of the pointer ptr. Both ptr and that heap-stored pointer point to the same integer location on the heap, which contains 14.
+
+TPS 2:
+1:
+The program creates a structure called Node that contains an integer (iValue), a float (fValue), and a pointer (next) to another Node. It uses malloc to allocate memory for one Node on the heap. The pointer head stores the address of that Node. Then the program uses head to assign 5 to iValue and 3.14 to fValue.
+
+2:
+I used printf with %p to print the memory addresses. & gets the address of a variable or structure member, and head already contains the address of the Node.
+
+3:
+The members of a structure are stored together in one block of memory, in the order they were declared. There may be padding between members. The pointer head stores the starting address of the Node structure, which is also the address of its first member, iValue.
+The pointer variable head itself is stored separately from the Node. Since the Node was created using malloc, the Node is stored on the heap, while head is a local variable in main.
